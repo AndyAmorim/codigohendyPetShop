@@ -14,11 +14,12 @@ const atualizarBanco = () => {
 const listarPets = () => {
 
     bancoDados.pets.forEach((pet) => {
-
-        console.log(`${pet.nome}, ${pet.idade} anos, ${pet.tipo}, ${pet.raca}, ${(pet.vacinado) ? 'vacinado': 'não vacinado'}`);
+        let { nome, idade , tipo ,raca } = pet
+        console.log(`${nome}, ${idade} anos, ${tipo}, ${raca}, ${(pet.vacinado) ? 'vacinado': 'não vacinado'}`);
     
         pet.servicos.forEach((servico) => {
-            console.log(`${servico.data} - ${servico.nome}`);
+            let { data, nome} = servico
+            console.log(`${data} - ${nome}`);
         })
     })
 }
@@ -122,7 +123,7 @@ const clientePremium = (pet) => {
         console.log(`Olá, ${pet.nome}! Você ainda não tem descontos disponiveis!`);
     }
 }
-
+listarPets()
 // darBanhoPet(bancoDados.pets[4]);
 // darBanhoPet(bancoDados.pets[4]);
 // darBanhoPet(bancoDados.pets[4]);
